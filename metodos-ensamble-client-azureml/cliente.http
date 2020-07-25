@@ -1,0 +1,69 @@
+# Cliente
+
+GET http://localhost:8181
+Accept: application/json
+
+###
+
+POST http://localhost:8181/score
+Content-Type: application/json
+Accept: application/json
+
+[
+  {
+    "Embarazos": 2,
+    "Glucosa": 130,
+    "PreTrueonSanguinea": 64,
+    "PliegueCutaneo": 35,
+    "Insulina": 119,
+    "IndiceMasaCorporal": 30.5,
+    "PedigriDiabetes": 1.4,
+    "Edad": 34,
+    "MedicacionPrevia": "xd",
+    "Observaciones": "xd",
+    "FechaDiagostico": "2016-03-04 00:00:00,000000"
+  },
+  {
+    "Embarazos": 2,
+    "Glucosa": 48,
+    "PreTrueonSanguinea": 64,
+    "PliegueCutaneo": 35,
+    "Insulina": 119,
+    "IndiceMasaCorporal": 30.5,
+    "PedigriDiabetes": 1.4,
+    "Edad": 34,
+    "MedicacionPrevia": "xd",
+    "Observaciones": "xd",
+    "FechaDiagostico": "2016-03-04 00:00:00,000000"
+  }
+]
+
+
+###
+# Endpoints modelo deployado
+GET http://d6ea0d2a-8a8a-4098-9833-598d3bc51802.centralus.azurecontainer.io/swagger.json
+Accept: application/json
+
+###
+POST http://d6ea0d2a-8a8a-4098-9833-598d3bc51802.centralus.azurecontainer.io/score
+Content-Type: application/json
+
+{
+  "data": [
+    {
+      "Embarazos": 2,
+      "Glucosa": 40,
+      "PreTrueonSanguinea": 64,
+      "PliegueCutaneo": 35,
+      "Insulina": 119,
+      "IndiceMasaCorporal": 30.5,
+      "PedigriDiabetes": 1.4,
+      "Edad": 34,
+      "MedicacionPrevia": "xd",
+      "Observaciones": "xd",
+      "FechaDiagostico": "2016-03-04 00:00:00,000000"
+    }
+  ]
+}
+
+###
