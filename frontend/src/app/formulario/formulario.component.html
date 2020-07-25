@@ -1,0 +1,56 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Predecir Diabetes</mat-card-title>
+        <mat-card-subtitle>Consumiendo Modelo Azure ML con métodos de ensamble</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-form-field>
+            <mat-label>Embarazos</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.Embarazos" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Glucosa</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.Glucosa" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Presión Sanguínea</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.PreTrueonSanguinea" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Pliegue Cutaneo</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.PliegueCutaneo" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Insulina</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.Insulina" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Indice Masa Corporal</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.IndiceMasaCorporal" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Pedigri Diabetes</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.PedigriDiabetes" required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Edad</mat-label>
+            <input matInput type="number" [(ngModel)]="dto.Edad" required>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            ...
+        </button>
+        <button mat-raised-button (click)="clear()">CLEAR</button>
+        <button mat-raised-button color="primary" (click)="run()">RUN</button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="getStatus()">
+        <span>Estado</span>
+    </button>
+    <button mat-menu-item (click)="demo()">
+        <span>Data de prueba</span>
+    </button>
+</mat-menu>
