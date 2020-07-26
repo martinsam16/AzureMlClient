@@ -1,8 +1,8 @@
 package com.martinsaman.metodosensambleclientazureml.rest;
 
-import com.martinsaman.metodosensambleclientazureml.clients.AzureMlClient;
-import com.martinsaman.metodosensambleclientazureml.clients.DataDto;
-import com.martinsaman.metodosensambleclientazureml.clients.DataDtoList;
+import com.martinsaman.metodosensambleclientazureml.dto.DataDto;
+import com.martinsaman.metodosensambleclientazureml.dto.DataDtoList;
+import com.martinsaman.metodosensambleclientazureml.service.AzureMlService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,16 +14,16 @@ import java.util.List;
 public class AzureMlRest {
 
     @Autowired
-    private AzureMlClient azureMlClient;
+    private AzureMlService azureMlService;
 
     @GetMapping
     String serviceHealthCheck() {
-        return azureMlClient.serviceHealthCheck();
+        return azureMlService.serviceHealthCheck();
     }
 
-    @PostMapping("/score")
-    Object runMLService(@RequestBody List<DataDto> dataDtos) {
+    @PostMapping("/predecir")
+    List<Boolean> runMLService(@RequestBody List<DataDto> dataDtos) {
         System.out.println(dataDtos);
-        return azureMlClient.runMLService(DataDtoList.builder().data(dataDtos).build());
+        return azureMlService.runMLService(DataDtoList.builder().data(dataDtos).build()).getResult();
     }
 }

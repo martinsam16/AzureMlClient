@@ -5,7 +5,7 @@ Accept: application/json
 
 ###
 
-POST http://localhost:8181/score
+POST http://localhost:8181/predecir
 Content-Type: application/json
 Accept: application/json
 

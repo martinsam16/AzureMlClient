@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {Component, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
-import DataDto from '../models/DataDto'
-import { AzureClient } from '../services/AzureClient'
+import DataDto from '../models/DataDto';
+import {AzureClient} from '../services/AzureClient';
 
 @Component({
   selector: 'app-formulario',
@@ -15,21 +15,22 @@ export class FormularioComponent implements OnInit {
 
   constructor(
     private cliente: AzureClient,
-    private _snackBar: MatSnackBar
-  ) { }
+    private snackBar: MatSnackBar
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
-  run() {
-    this.cliente.predecir(this.dto)
+  run(): void {
+    this.cliente.predict(this.dto)
       .subscribe(data => {
-        const diabetes = data.result[0];
-        this.mostrarSnackbar(diabetes ? "Tendrá diabetes" : "No tendrá diabetes");
+        const diabetes = data[0];
+        this.mostrarSnackbar(diabetes ? 'Tendrá diabetes' : 'No tendrá diabetes');
       });
   }
 
-  getStatus() {
+  getStatus(): void {
     this.cliente.isRunning()
       .subscribe(data => {
         this.mostrarSnackbar(data);
@@ -37,16 +38,16 @@ export class FormularioComponent implements OnInit {
 
   }
 
-  mostrarSnackbar(data) {
-    this._snackBar.open(data, "x");
+  mostrarSnackbar(data): void {
+    this.snackBar.open(data, 'x');
   }
 
-  clear() {
+  clear(): void {
     this.dto = new DataDto();
-    this._snackBar.dismiss();
+    this.snackBar.dismiss();
   }
 
-  demo() {
+  demo(): void {
     this.dto.Embarazos = 2;
     this.dto.Glucosa = 130;
     this.dto.PreTrueonSanguinea = 64;

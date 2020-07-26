@@ -1,4 +1,4 @@
-package com.martinsaman.metodosensambleclientazureml.clients;
+package com.martinsaman.metodosensambleclientazureml.dto;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

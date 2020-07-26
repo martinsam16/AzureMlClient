@@ -1,0 +1,20 @@
+version: "3"
+services:
+  backend:
+    build: ./metodos-ensamble-client-azureml
+    container_name: backend-azureml
+    ports:
+      - "8181:8181"
+    networks:
+      - net-azureml
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-azureml
+    ports:
+      - "80:80"
+    networks:
+      - net-azureml
+  
+networks:
+  net-azureml:

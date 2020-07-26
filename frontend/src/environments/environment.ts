@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiconx: 'http://localhost:8181'
+  url: 'http://localhost:8181'
 };
 
 /*
