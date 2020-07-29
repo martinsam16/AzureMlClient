@@ -18,7 +18,7 @@ export class AzureClient {
 
 
   public isRunning(): Observable<string> {
-    return this.http.get<string>(`${this.api}`, {
+    return this.http.get<string>(`${this.api}/health`, {
       responseType: 'text' as 'json'
     });
   }

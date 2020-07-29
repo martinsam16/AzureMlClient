@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.List;
-
 @FeignClient(
         url = "http://d6ea0d2a-8a8a-4098-9833-598d3bc51802.centralus.azurecontainer.io",
         name = "ensambleClient"

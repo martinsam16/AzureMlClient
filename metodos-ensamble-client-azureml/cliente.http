@@ -1,6 +1,8 @@
-# Cliente
-
 GET http://localhost:8181
+
+###
+
+GET http://localhost:8181/health
 Accept: application/json
 
 ###

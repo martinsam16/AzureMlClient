@@ -17,6 +17,11 @@ public class AzureMlRest {
     private AzureMlService azureMlService;
 
     @GetMapping
+    String index() {
+        return "Hola :D";
+    }
+
+    @GetMapping("/health")
     String serviceHealthCheck() {
         return azureMlService.serviceHealthCheck();
     }
